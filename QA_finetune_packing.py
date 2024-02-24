@@ -53,7 +53,7 @@ bnb_config = BitsAndBytesConfig(
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 # tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
-collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer,mlm=False)
+# collator = DataCollatorForCompletionOnlyLM(response_template, tokenizer=tokenizer,mlm=False)
 model = AutoModelForCausalLM.from_pretrained(model_name,
                                              quantization_config=bnb_config,
                                              device_map="auto")
